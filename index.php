@@ -28,7 +28,10 @@ if ($_POST) {
           echo json_encode($res);
           $redis->sAdd('arr', $int_num);
         }
-      }
+    } else {
+    	$res = array('error' => "string recieved", 'server ip' => $_SERVER['SERVER_ADDR']);
+        echo json_encode($res);
     }
+}
 ?>
 
